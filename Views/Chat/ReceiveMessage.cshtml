@@ -1,0 +1,30 @@
+@model List<MessagingApp.Models.MessageBody>
+
+<h1>Receive Message:</h4>
+    @if (Model.Count < 0)
+    {
+        <p>No message has been send yet.</p>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">UserName</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Username</td>
+                        <td>@item.MessageText</td>
+                        <td> @item.Date</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    }
